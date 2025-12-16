@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Halaman Questions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap');
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:radial-gradient(circle at top,#1b2735,#090a0f);
+    font-family:'Cinzel',serif;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:rgba(0,0,0,0.65);
+    width:90%;
+    max-width:650px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(0,255,255,.3);
+}
+
+h1{
+    text-align:center;
+    text-shadow:0 0 15px cyan;
+}
+
+.nav-btn{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:10px 0 20px;
+}
+
+.icon-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    font-size:20px;
+    border:none;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ffcc00,#ff8800);
+    box-shadow:0 0 12px rgba(255,200,0,.7);
+}
+
+.timer{
+    text-align:center;
+    font-size:18px;
+    margin-bottom:15px;
+    color:#ffcc00;
+}
+
+.question{
+    margin-bottom:15px;
+}
+
+.options label{
+    display:block;
+    padding:8px;
+    cursor:pointer;
+}
+
+.main-btn{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    font-family:'Cinzel',serif;
+    background:linear-gradient(135deg,#00f5ff,#008cff);
+    box-shadow:0 0 20px rgba(0,255,255,.6);
+    cursor:pointer;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.result h2{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.result p{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size:14px;
+    opacity:.85;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>📜 Wizarding Quiz</h1>
+
+    <div class="nav-btn">
+        <button class="icon-btn" onclick="goHome()">🏠</button>
+        <button class="icon-btn" onclick="refreshPage()">🔄</button>
+    </div>
+
+    <div class="timer">⏱️ Waktu: <span id="time">15</span> detik</div>
+
+    <div id="quiz"></div>
+
+    <button class="main-btn" onclick="nextQuestion()">Next</button>
+
+    <div class="result" id="result">
+        <h2 id="scoreText"></h2>
+        <p>Terima kasih telah menjelajahi dunia sihir ✨</p>
+    </div>
+</div>
+
+<script src="question.js"></script>
+</body>
+</html>

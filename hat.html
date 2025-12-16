@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Halaman Hat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap');
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1b2735, #090a0f);
+    font-family: 'Cinzel', serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(0,0,0,0.65);
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,255,255,0.3);
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 0 0 15px cyan;
+}
+
+/* NAV */
+.nav-btn {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0 20px;
+}
+
+.icon-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ffcc00, #ff8800);
+    box-shadow: 0 0 12px rgba(255,200,0,0.7);
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+/* TIMER */
+.timer {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+/* QUESTION */
+.question {
+    margin-bottom: 15px;
+}
+
+.options label {
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* BUTTON */
+button.main-btn {
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #00f5ff, #008cff);
+    box-shadow: 0 0 20px rgba(0,255,255,0.6);
+}
+
+button.main-btn:hover {
+    transform: scale(1.05);
+}
+
+/* RESULT */
+.result {
+    display: none;
+    text-align: center;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result img {
+    width: 110px;
+    margin-bottom: 10px;
+}
+
+.result h2 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    text-transform: none; 
+    letter-spacing: 0.5px;
+}
+
+.result p {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* HOUSE COLORS */
+.gryffindor { color: #ae0001; }
+.ravenclaw  { color: #222f5b; }
+.hufflepuff { color: #ecb939; }
+.slytherin  { color: #2a623d; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎩 Sorting Hat</h1>
+
+    <div class="nav-btn">
+        <button class="icon-btn" onclick="goHome()">🏠</button>
+        <button class="icon-btn" onclick="refreshPage()">🔄</button>
+    </div>
+
+    <div class="timer">⏱️ Waktu: <span id="time">15</span> detik</div>
+
+    <div id="quiz"></div>
+
+    <button class="main-btn" onclick="nextQuestion()">Next</button>
+
+    <div class="result" id="result">
+        <img id="crest">
+        <h2 id="houseText"></h2>
+        <p>Congratulations ! Dunia sihir menantimu ✨</p>
+    </div>
+</div>
+
+<script src="hat.js"></script>
+</body>
+</html>

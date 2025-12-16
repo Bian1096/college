@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #1b2735, #090a0f);
+    font-family: 'Cinzel', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Magic particles */
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ffffff33 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: stars 60s linear infinite;
+}
+
+@keyframes stars {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
+
+.dashboard {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,255,255,0.3);
+    text-align: center;
+    width: 360px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px cyan;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #00f5ff, #008cff);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0,255,255,0.6);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(0,255,255,1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.refresh {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ffcc00, #ff8800);
+    box-shadow: 0 0 20px rgba(255,200,0,0.7);
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+    <h1>Wizarding World</h1>
+    <div class="subtitle">Magic Begins Here</div>
+
+    <div class="buttons">
+        <button onclick="openSortingHat()">🎩 Sorting Hat</button>
+        <button onclick="openQuestion()">📜 Question</button>
+    </div>
+
+    <button class="refresh" onclick="refreshPage()">🔄Refresh</button>
+
+    <div class="footer">
+        © Albian Arif 2025
+    </div>
+</div>
+
+<script>
+function openSortingHat() {
+    window.location.href = "hat.html";
+}
+
+function openQuestion() {
+    window.location.href = "question.html";
+}
+
+function refreshPage() {
+    location.reload();
+}
+</script>
+
+</body>
+</html>
